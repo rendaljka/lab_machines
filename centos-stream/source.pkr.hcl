@@ -12,8 +12,8 @@ source "virtualbox-iso" "centos-stream-8" {
   shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
 
   vboxmanage = [
-    ["modifyvm", "{{.Name}}", "--memory", "${var.cpus}"],
-    ["modifyvm", "{{.Name}}", "--cpus", "${var.memory}"],
+    ["modifyvm", "{{.Name}}", "--memory", "${var.memory}"],
+    ["modifyvm", "{{.Name}}", "--cpus", "${var.cpus}"],
   ]
 
   headless = "true"
