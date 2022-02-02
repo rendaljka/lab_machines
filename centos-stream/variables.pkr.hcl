@@ -45,7 +45,8 @@ variable "iso_checksum" {
 # Machine parameters
 
 variable "disk_size" {
-  default = 80
+  #it's in MB
+  default = 80000
 }
 
 variable "cpus" {
