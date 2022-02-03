@@ -1,10 +1,8 @@
 
-source "virtualbox-iso" "centos-stream-8" {
-  guest_os_type    = "${var.guest_os_type}"
+source "virtualbox-ovf" "centos-stream-8" {
   vm_name          = "${var.vm_name}"
-  iso_url          = "${var.iso_url}"
-  iso_checksum     = "${var.iso_checksum}"
-  disk_size        = "${var.disk_size}"
+  source_path      = "${var.source_path}"
+  checksum         = "${var.checksum}"
   ssh_username     = "${var.ssh_username}"
   ssh_password     = "${var.ssh_password}"
   ssh_timeout      = "${var.ssh_timeout}"
@@ -18,13 +16,7 @@ source "virtualbox-iso" "centos-stream-8" {
   ]
 
   headless = "false"
-  memory = 2048
-  cpus = 3
-  firmware="efi"
 
-  boot_command = [
-     "<tab><bs><bs><bs><bs><bs>inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-  ]
 
   export_opts = [
     "--manifest",

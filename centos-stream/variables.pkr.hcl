@@ -17,47 +17,37 @@ variable "vm_version" {
 # SSH
 variable "ssh_username" {
   type    = string
-  default = "rendaljka"
+  default = "root"
 }
 
 variable "ssh_password" {
   type    = string
-  default = "rendaljka123"
+  default = "rendaljka1234"
 }
 
 variable "ssh_timeout" {
   type    = string
-  default = "20m"
+  default = "10m"
 }
 
 # OS
 
-variable "guest_os_type" {
+variable "source_path" {
   type    = string
-  default = "RedHat_64"
+  default = "./centos-stream-8-server.ova"
 }
 
-variable "iso_url" {
+variable "checksum" {
   type    = string
-  default = "http://linux.darkpenguin.net/distros/CentOS/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-latest-boot.iso"
-}
-
-variable "iso_checksum" {
-  type    = string
-  default = "305e422c6218f4630c47da0feaf91a794dad468f6e2224ef7c40b1f63fcc020c"
+  default = "28e5333d0739f8e6f7c3299fe54e582f522c92ee"
 }
 
 # Machine parameters
 
-variable "disk_size" {
-  #it's in MB
-  default = 80000
-}
-
 variable "cpus" {
-  default = 4
+  default = 3
 }
 variable "memory" {
-  default = 5792
+  default = 3000
 }
 
