@@ -7,6 +7,7 @@ source "virtualbox-iso" "centos-stream-8" {
   disk_size        = "${var.disk_size}"
   ssh_username     = "${var.ssh_username}"
   ssh_password     = "${var.ssh_password}"
+  ssh_timeout      = "${var.ssh_timeout}"
   communicator     = "ssh"
   http_directory   = "http"
   shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
@@ -16,10 +17,13 @@ source "virtualbox-iso" "centos-stream-8" {
     ["modifyvm", "{{.Name}}", "--cpus", "${var.cpus}"],
   ]
 
-  headless = "true"
+  headless = "false"
+  memory = 2048
+  cpus = 3
+  firmware="efi"
 
   boot_command = [
-    "<tab><bs><bs><bs><bs><bs>inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+     "<tab><bs><bs><bs><bs><bs>inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
   ]
 
   export_opts = [

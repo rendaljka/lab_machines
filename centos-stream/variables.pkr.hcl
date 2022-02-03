@@ -25,6 +25,11 @@ variable "ssh_password" {
   default = "rendaljka123"
 }
 
+variable "ssh_timeout" {
+  type    = string
+  default = "20m"
+}
+
 # OS
 
 variable "guest_os_type" {
