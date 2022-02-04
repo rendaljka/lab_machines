@@ -1,6 +1,6 @@
 # Lab Machines
 
-This is a collection of Packer templates, meant to create and customize VMs for my local lab environment.
+This is a collection of [Packer](https://www.packer.io/) templates, meant to create and customize VMs for my local lab environment.
 As I often decide to test something new ad-hoc, and my normal VMs might be "dirty", I needed something that would allow me to spin off the VM I need without manually executing commands.
 
 My goals (for now) are:
@@ -29,5 +29,7 @@ My goals (for now) are:
 ## Limitations
 
 1. I tried to use the [Virtualbox ISO builder](https://www.packer.io/plugins/builders/virtualbox/iso). Howwever, I had issues with setting up the `boot_command` in order to install from the image during build.So instead I build an `.ova` myself. The `.ova` is minimal server configuration.
+
+Currently the project uses [Virtualbox OVA/OVF Builder](https://www.packer.io/plugins/builders/virtualbox/ovf) instead.
 
 2. Hosting the `.ova` in the repository is impossible since it's over the limit size. Also `git lfs` also had limits regarding the bandwith quota. So now base `.ova` files are hosted on GDrive or Dropbox or somewhere elese.
