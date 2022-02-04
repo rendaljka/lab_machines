@@ -15,7 +15,7 @@ My goals (for now) are:
 
 1. Clone this repository.
 2. Select which image/folder you need.
-3. Download the base `.ova`, link located in `{OS}/base_ova/`.
+3. Download the base `.ova`, link located in `{OS}/base_ova/ova_download.md`.
 
    **Note:** More on this in the next section.
 
