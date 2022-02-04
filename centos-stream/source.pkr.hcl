@@ -7,7 +7,6 @@ source "virtualbox-ovf" "centos-stream-8" {
   ssh_password     = "${var.ssh_password}"
   ssh_timeout      = "${var.ssh_timeout}"
   communicator     = "ssh"
-  http_directory   = "http"
   shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
 
   vboxmanage = [

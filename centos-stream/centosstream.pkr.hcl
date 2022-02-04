@@ -16,7 +16,7 @@ build {
   provisioner "shell" {
     scripts = [
       "scripts/yum_setup.sh",
-      "scripts/cri-o_install.sh",
+      "${var.container_runtime_provision_script}",
       "scripts/kubernetes.sh"
     ]
   }

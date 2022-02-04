@@ -34,7 +34,7 @@ variable "ssh_timeout" {
 
 variable "source_path" {
   type    = string
-  default = "./centos-stream-8-server.ova"
+  default = "./base_ova/centos-stream-8-server.ova"
 }
 
 variable "checksum" {
@@ -51,3 +51,7 @@ variable "memory" {
   default = 3000
 }
 
+variable "container_runtime_provision_script" {  
+  type    = string  
+  default = "scripts/cri-o_install.sh"
+}
