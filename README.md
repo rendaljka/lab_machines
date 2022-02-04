@@ -6,7 +6,8 @@ As I often decide to test something new ad-hoc, and my normal VMs might be "dirt
 My goals (for now) are:
 
 - Easy to import ready to use K8S environment
-- Option to choose between CRI runtimes (containerd,cru-o,firecracker.. etc).
+- Option to choose between CRI runtimes (containerd,cri-o)
+  Their container environments (kata, firecracker .. etc)
   **Note:** No docker support as the docker shim wouldn't be supported anymore
 - Kali-linux image customized to my taste (ohmyzsh, powerlevel10k, radare2 ..etc)
 
@@ -33,3 +34,11 @@ My goals (for now) are:
 Currently the project uses [Virtualbox OVA/OVF Builder](https://www.packer.io/plugins/builders/virtualbox/ovf) instead.
 
 2. Hosting the `.ova` in the repository is impossible since it's over the limit size. Also `git lfs` also had limits regarding the bandwith quota. So now base `.ova` files are hosted on GDrive or Dropbox or somewhere elese.
+
+## Disclaimers
+
+**The username and password combinations in the configuration templates are just for Building the image.**
+
+**They should be changed afterwars.**
+
+**DO NOT USE IN PRODUCTION ENVIRONMENTS**
