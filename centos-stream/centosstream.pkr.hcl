@@ -10,16 +10,13 @@ packer {
 build {
   name = "${var.vm_name}"
   sources = [
-    "source.virtualbox-iso.centos-stream-8"
+    "source.virtualbox-ovf.centos-stream-8"
   ]
 
   provisioner "shell" {
-    inline = ["sudo yum update"]
-  }
-
-  provisioner "shell" {
     scripts = [
-      "scripts/cri-o_install.sh",
+      "scripts/yum_setup.sh",
+      "${var.container_runtime_provision_script}",
       "scripts/kubernetes.sh"
     ]
   }
